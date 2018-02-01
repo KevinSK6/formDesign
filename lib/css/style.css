@@ -1,0 +1,224 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif !important;
+  background: #f2f2f2;
+}
+
+header {
+  width: 100%;
+  background: #303F9F;
+  color: #ddd;
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav_bar {
+  width: 40%;
+  padding-top: 13px;
+}
+.nav_bar ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+.nav_bar ul li a {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 15px;
+  position: relative;
+}
+.nav_bar ul li a:hover, .nav_bar ul li a:focus {
+  color: white;
+  text-decoration: none;
+}
+.nav_bar ul li a:before {
+  content: "";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.8);
+  left: 0;
+  bottom: 0;
+  transition: all 0.4s;
+}
+.nav_bar ul li a:hover:before, .nav_bar ul li a:focus:before {
+  width: 100%;
+  background: white;
+}
+
+.wrap {
+  width: 90%;
+  max-width: 500px;
+  padding: 40px;
+  margin: auto;
+  background: #fff;
+  box-shadow: 0px 0px 3px grey;
+}
+
+.contenedor-formulario {
+  width: 100%;
+  height: 100vh;
+  color: #f2f2f2;
+  padding: 50px;
+  position: fixed;
+  top: -300%;
+  left: 0;
+  opacity: 0;
+  background: rgba(242, 242, 242, 0.6);
+  transition: all 600ms ease;
+  z-index: 10;
+}
+.contenedor-formulario .close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 30px;
+}
+.contenedor-formulario .formulario {
+  width: 100%;
+  margin: auto;
+}
+.contenedor-formulario .formulario .input-group {
+  position: relative;
+  margin-bottom: 32px;
+}
+.contenedor-formulario .formulario .input-group input[type="text"],
+.contenedor-formulario .formulario .input-group input[type="email"],
+.contenedor-formulario .formulario .input-group input[type="password"] {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: #303F9F;
+  width: 100%;
+  outline: none;
+  padding: 15px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid #BBDEFB;
+}
+.contenedor-formulario .formulario .input-group input[type="text"]:hover, .contenedor-formulario .formulario .input-group input[type="text"]:focus,
+.contenedor-formulario .formulario .input-group input[type="email"]:hover,
+.contenedor-formulario .formulario .input-group input[type="email"]:focus,
+.contenedor-formulario .formulario .input-group input[type="password"]:hover,
+.contenedor-formulario .formulario .input-group input[type="password"]:focus {
+  outline: none;
+  border-color: #303F9F;
+}
+.contenedor-formulario .formulario .input-group input[type="text"].error,
+.contenedor-formulario .formulario .input-group input[type="email"].error,
+.contenedor-formulario .formulario .input-group input[type="password"].error {
+  border-bottom-color: #D32F2F;
+}
+.contenedor-formulario .formulario .input-group input[type="text"].error + label,
+.contenedor-formulario .formulario .input-group input[type="email"].error + label,
+.contenedor-formulario .formulario .input-group input[type="password"].error + label {
+  color: #D32F2F;
+}
+.contenedor-formulario .formulario .input-group label {
+  color: #303F9F;
+}
+.contenedor-formulario .formulario .input-group label.label {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-size: 16px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.contenedor-formulario .formulario .input-group label.label.active {
+  top: -12px;
+  font-size: 12px;
+  color: #B6B6B6;
+}
+.contenedor-formulario .formulario .input-group.checkbox label, .contenedor-formulario .formulario .input-group.radio label {
+  display: inline-block;
+  cursor: pointer;
+  color: #303F9F;
+  position: relative;
+  padding: 5px 15px 5px 51px;
+  font-size: 1em;
+  border-radius: 3px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.contenedor-formulario .formulario .input-group.checkbox label:hover, .contenedor-formulario .formulario .input-group.radio label:hover {
+  background: #bbdefb;
+}
+.contenedor-formulario .formulario .input-group.checkbox label:before, .contenedor-formulario .formulario .input-group.radio label:before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  left: 15px;
+  top: 8px;
+  background: none;
+  border: 2px solid #303F9F;
+}
+.contenedor-formulario .formulario .input-group.error label {
+  color: #D32F2F;
+}
+.contenedor-formulario .formulario .input-group.error label:hover {
+  background: rgba(211, 47, 47, 0.2);
+}
+.contenedor-formulario .formulario .input-group.error label:before {
+  border-color: #D32F2F;
+}
+.contenedor-formulario .formulario .input-group.radio input[type="radio"] {
+  display: none;
+}
+.contenedor-formulario .formulario .input-group.radio input[type="radio"]:checked + label:before {
+  display: none;
+}
+.contenedor-formulario .formulario .input-group.radio input[type="radio"]:checked + label {
+  padding: 5px 15px;
+  background: #303F9F;
+  border-radius: 2px;
+  color: #f2f2f2;
+}
+.contenedor-formulario .formulario .input-group.checkbox label:before {
+  border-radius: 3px;
+}
+.contenedor-formulario .formulario .input-group.checkbox input[type="checkbox"] {
+  display: none;
+}
+.contenedor-formulario .formulario .input-group.checkbox input[type="checkbox"]:checked + label:before {
+  display: none;
+}
+.contenedor-formulario .formulario .input-group.checkbox input[type="checkbox"]:checked + label {
+  padding: 5px 15px;
+  background: #303F9F;
+  border-radius: 2px;
+  color: #f2f2f2;
+}
+.contenedor-formulario .formulario .submit {
+  background: #303F9F;
+  border-radius: 1px;
+  border: 2px solid #f2f2f2;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  padding: 12px;
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+.contenedor-formulario .formulario .submit:hover {
+  background: #1976D2;
+}
+
+.openForm {
+  top: 0;
+  opacity: 1;
+}
+
+/*# sourceMappingURL=style.css.map */
